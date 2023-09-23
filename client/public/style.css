@@ -136,7 +136,7 @@ main {
 
 /* Detail Page CSS*/
 
-.gift-info {
+.item-info {
   display: flex;
   flex-direction: row;
 }
@@ -150,6 +150,6 @@ main {
   width: 80%;
 }
 
-.gift-details {
+.item-details {
   width: 45vw;
 }
