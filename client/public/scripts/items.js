@@ -1,7 +1,6 @@
 const renderItems = async () => {
     
-    const response = await fetch('/items')
-    console.log(response.text())
+    const response = await fetch('http://localhost:3001/items');
     const data = await response.json()
 
     const mainContent = document.getElementById('main-content')
