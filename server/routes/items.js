@@ -15,7 +15,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:itemId', (req, res) => {
-  console.log("Attempting to serve item.html for itemId:", req.params.itemId);
   res.status(200).sendFile(path.resolve(__dirname, '../public/item.html'))
 });
 
