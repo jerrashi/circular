@@ -1,13 +1,13 @@
-const renderGifts = async () => {
+const renderItems = async () => {
     
-    const response = await fetch('/gifts')
+    const response = await fetch('/items')
     const data = await response.json()
 
     const mainContent = document.getElementById('main-content')
 
     if (data) {
 
-        data.map(gift => {
+        data.map(item => {
             const card = document.createElement('div')
             card.classList.add('card')
 
@@ -17,24 +17,24 @@ const renderGifts = async () => {
             const bottomContainer = document.createElement('div')
             bottomContainer.classList.add('bottom-container')
 
-            topContainer.style.backgroundImage = `url(${gift.image})`
+            topContainer.style.backgroundImage = `url(${item.image})`
 
             const name = document.createElement('h3')
-            name.textContent = gift.name
+            name.textContent = item.name
             bottomContainer.appendChild(name)
 
-            const pricePoint = document.createElement('p')
-            pricePoint.textContent = 'Price: ' + gift.pricePoint
-            bottomContainer.appendChild(pricePoint)
+            const price = document.createElement('p')
+            pricePoint.textContent = 'Price: $' + item.price
+            bottomContainer.appendChild(price)
 
-            const audience = document.createElement('p')
-            audience.textContent = 'Great For: ' + gift.audience
+            const audiencfe = document.createElement('p')
+            audience.textContent = 'Great For: ' + item.audience
             bottomContainer.appendChild(audience)
 
             const link = document.createElement('a')
             link.textContent = 'Read More >'
             link.setAttribute('role', 'button')
-            link.href = `/gifts/${gift.id}`
+            link.href = `/items/${item.id}`
             bottomContainer.appendChild(link)
 
             card.appendChild(topContainer)
@@ -44,13 +44,13 @@ const renderGifts = async () => {
     }
     else {
         const message = document.createElement('h2')
-        message.textContent = 'No Gifts Available 😞'
+        message.textContent = 'No Items Available 😞'
         mainContent.appendChild(message)
     }
 }
 
-// Conditionally run renderGifts only if element with id "main-content" exists
+// Conditionally run renderItems only if element with id "main-content" exists
 const mainContent = document.getElementById('main-content');
 if (mainContent) {
-  renderGifts();
+  renderItems();
 }
