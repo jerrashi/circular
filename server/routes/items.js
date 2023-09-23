@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:itemId', (req, res) => {
-  res.status(200).sendFile(path.resolve(__dirname, '../public/item.html'))
+  res.status(200).sendFile(path.resolve(__dirname, '../../client/public/item.html'))
 });
 
 export default router
