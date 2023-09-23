@@ -4,14 +4,14 @@ import itemsRouter from './routes/items.js'
 
 const app = express()
 
-app.use('/public', express.static('./public'))
-app.use('/scripts', express.static('./public/scripts'))
-
 app.use('/items', itemsRouter)
 
 app.get('/', (req, res) => {
   res.status(200).send('<h1 style="text-align: center; margin-top: 50px;">Circular API</h1>')
 })
+
+app.use('/public', express.static('./public'))
+app.use('/scripts', express.static('./public/scripts'))
 
 const PORT = process.env.PORT || 3001
     

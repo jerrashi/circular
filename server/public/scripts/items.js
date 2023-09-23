@@ -24,10 +24,10 @@ const renderItems = async () => {
             bottomContainer.appendChild(name)
 
             const price = document.createElement('p')
-            pricePoint.textContent = 'Price: $' + item.price
+            price.textContent = 'Price: $' + item.price
             bottomContainer.appendChild(price)
 
-            const audiencfe = document.createElement('p')
+            const audience = document.createElement('p')
             audience.textContent = 'Great For: ' + item.audience
             bottomContainer.appendChild(audience)
 
