@@ -1,6 +1,6 @@
 const renderItems = async () => {
     
-    const response = await fetch('/items');
+    const response = await fetch('/items')
     const data = await response.json()
 
     const mainContent = document.getElementById('main-content')
@@ -23,9 +23,9 @@ const renderItems = async () => {
             name.textContent = item.name
             bottomContainer.appendChild(name)
 
-            const price = document.createElement('p')
-            price.textContent = 'Price: $' + item.price
-            bottomContainer.appendChild(price)
+            const pricePoint = document.createElement('p')
+            pricePoint.textContent = 'Price: ' + item.pricePoint
+            bottomContainer.appendChild(pricePoint)
 
             const audience = document.createElement('p')
             audience.textContent = 'Great For: ' + item.audience

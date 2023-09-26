@@ -13,7 +13,7 @@ const router = express.Router()
 router.get('/', ItemsController.getItems);
 
 router.get('/:itemId', (req, res) => {
-  res.status(200).sendFile(path.resolve(__dirname, '../item.html'))
+  res.status(200).sendFile(path.resolve(__dirname, '../public/item.html'))
 });
 
 export default router
