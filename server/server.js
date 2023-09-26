@@ -1,4 +1,5 @@
 import express from 'express'
+import './config/dotenv.js'
 import itemsRouter from './routes/items.js'
 
 const app = express()
