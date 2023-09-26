@@ -49,8 +49,11 @@ const renderItems = async () => {
     }
 }
 
-// Conditionally run renderItems only if element with id "main-content" exists
-const mainContent = document.getElementById('main-content');
-if (mainContent) {
-  renderItems();
+const requestedUrl = window.location.href.split('/').pop()
+
+if (requestedUrl) {
+  window.location.href = '../404.html'
+}
+else {
+  renderItems()
 }
